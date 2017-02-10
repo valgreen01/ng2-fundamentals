@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+header {
+  border: 1px solid whitesmoke;
+}
+
 .container {
   padding-top: 10px;
 }
