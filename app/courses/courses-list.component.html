@@ -19,6 +19,6 @@
     </div>
   </div>
 
-  <course-item class="row" *ngFor="let course of courses" [course]="course" (eventClick)="handleEventClicked($event)"></course-item>
+  <course-item class="row" *ngFor="let course of courses" [course]="course" (click)="handleCourseClicked(course.name)"></course-item>
 
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
     selector: 'course-item',
@@ -8,10 +8,8 @@ export class CourseItemComponent {
 
     @Input() course:any;
 
-    @Output() eventClick = new EventEmitter(); // Just for test purposes
-
     editCourse() {
-        this.eventClick.emit(this.course.name); // Just for test purposes
+        console.log('edit');
     }
 
     deleteCourse() {
