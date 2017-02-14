@@ -1,8 +1,9 @@
 import {Component, Input} from "@angular/core";
 
 @Component({
+    moduleId: module.id,
     selector: 'course-item',
-    templateUrl: 'app/courses/course-item.component.html'
+    templateUrl: 'course-item.component.html'
 })
 export class CourseItemComponent {
 

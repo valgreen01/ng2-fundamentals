@@ -3,8 +3,9 @@ import {CourseService} from "./shared/course.service";
 import {ToastrService} from "../common/toastr.service";
 
 @Component({
+    moduleId: module.id,
     selector: 'courses-list',
-    templateUrl: 'app/courses/courses-list.component.html'
+    templateUrl: 'courses-list.component.html'
 })
 export class CoursesListComponent implements OnInit {
 
