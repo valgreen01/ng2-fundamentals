@@ -12,12 +12,16 @@ var core_1 = require("@angular/core");
 var course_service_1 = require("../shared/course.service");
 var router_1 = require("@angular/router");
 var CourseDetailsComponent = (function () {
-    function CourseDetailsComponent(courseService, route) {
+    function CourseDetailsComponent(courseService, activatedRoute, router) {
         this.courseService = courseService;
-        this.route = route;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
     }
     CourseDetailsComponent.prototype.ngOnInit = function () {
-        this.course = this.courseService.getCourse(+this.route.snapshot.params['id']);
+        this.course = this.courseService.getCourse(+this.activatedRoute.snapshot.params['id']);
+    };
+    CourseDetailsComponent.prototype.cancelCourseCreation = function () {
+        this.router.navigate(['/courses']);
     };
     CourseDetailsComponent = __decorate([
         core_1.Component({
@@ -25,7 +29,7 @@ var CourseDetailsComponent = (function () {
             selector: 'course-details',
             templateUrl: 'course-details.component.html'
         }), 
-        __metadata('design:paramtypes', [course_service_1.CourseService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [course_service_1.CourseService, router_1.ActivatedRoute, router_1.Router])
     ], CourseDetailsComponent);
     return CourseDetailsComponent;
 }());

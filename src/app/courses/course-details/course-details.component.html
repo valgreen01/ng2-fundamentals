@@ -1,58 +1,62 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <label for="courseTitle" class="col-sm-2 control-label">Title</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="courseTitle" placeholder="Course title">
-    </div>
+<div class="container">
+  <div class="row">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="courseTitle" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="courseTitle" placeholder="Course title" value="{{course?.name}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="courseDesc" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" rows="3" id="courseDesc" placeholder="Course description">{{course?.description}}</textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="courseDate" class="col-sm-2 control-label">Date</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="courseDate" placeholder="Course date"
+                 value="{{course?.releasedDate}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="courseDuration" class="col-sm-2 control-label">Duration</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="courseDuration" placeholder="Course Duration"
+                 value="{{course?.duration}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Authors</label>
+        <div class="col-sm-4">
+          <select multiple class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col-sm-2 text-center">
+          <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-chevron-left"></i></button>
+          <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-chevron-right"></i></button>
+        </div>
+        <div class="col-sm-4">
+          <select multiple class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-success">Save</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-default" (click)="cancelCourseCreation()">Cancel</button>
+      </div>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="courseDesc" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-      <textarea class="form-control" rows="3" id="courseDesc" placeholder="Course description"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="courseDate" class="col-sm-2 control-label">Date</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="courseDate" placeholder="Course date">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="courseDuration" class="col-sm-2 control-label">Duration</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="courseDuration" placeholder="Course Duration">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-4">
-      <select multiple class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-    <div class="col-sm-4">
-      <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-chevron-left"></i></button>
-      <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-chevron-right"></i></button>
-    </div>
-    <div class="col-sm-4">
-      <select multiple class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" class="btn btn-success">Save</button>
-    </div>
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" class="btn btn-default">Cancel</button>
-    </div>
-  </div>
-</form>
+</div>

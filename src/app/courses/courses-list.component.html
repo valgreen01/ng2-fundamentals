@@ -13,12 +13,13 @@
       </form>
     </div>
     <div class="col-md-3">
-      <button class="btn btn-block btn-primary">
+      <button class="btn btn-block btn-primary" [routerLink]="['/courses/new']">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add course
       </button>
     </div>
   </div>
 
-  <course-item class="row" *ngFor="let course of courses" [course]="course" (click)="handleCourseClicked(course.name)"></course-item>
+  <course-item class="row" *ngFor="let course of courses" [course]="course"></course-item>
+  <!--<course-item class="row" *ngFor="let course of courses" [course]="course" (click)="handleCourseClicked(course.name)"></course-item>-->
 
 </div>

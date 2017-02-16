@@ -38,11 +38,11 @@ var CourseService = (function () {
             }
         ];
     }
-    CourseService.prototype.getCourses = function () {
-        return this.COURSES;
-    };
     CourseService.prototype.getCourse = function (id) {
         return this.COURSES.find(function (course) { return course.id === id; });
+    };
+    CourseService.prototype.getCourses = function () {
+        return this.COURSES;
     };
     CourseService = __decorate([
         core_1.Injectable(), 

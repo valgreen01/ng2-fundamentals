@@ -10,17 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var course_service_1 = require("./shared/course.service");
-var toastr_service_1 = require("../common/toastr.service");
+//import {ToastrService} from "../common/toastr.service";
 var CoursesListComponent = (function () {
-    function CoursesListComponent(courseService, toastr) {
+    function CoursesListComponent(courseService /*, private toastr: ToastrService*/) {
         this.courseService = courseService;
-        this.toastr = toastr;
     }
     CoursesListComponent.prototype.ngOnInit = function () {
         this.courses = this.courseService.getCourses();
-    };
-    CoursesListComponent.prototype.handleCourseClicked = function (courseName) {
-        this.toastr.success(courseName);
     };
     CoursesListComponent = __decorate([
         core_1.Component({
@@ -28,7 +24,7 @@ var CoursesListComponent = (function () {
             selector: 'courses-list',
             templateUrl: 'courses-list.component.html'
         }), 
-        __metadata('design:paramtypes', [course_service_1.CourseService, toastr_service_1.ToastrService])
+        __metadata('design:paramtypes', [course_service_1.CourseService])
     ], CoursesListComponent);
     return CoursesListComponent;
 }());
