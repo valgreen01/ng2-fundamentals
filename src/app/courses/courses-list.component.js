@@ -9,22 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var course_service_1 = require("./shared/course.service");
+//import {CourseService} from "./shared/course.service";
+var router_1 = require("@angular/router");
 //import {ToastrService} from "../common/toastr.service";
 var CoursesListComponent = (function () {
-    function CoursesListComponent(courseService /*, private toastr: ToastrService*/) {
-        this.courseService = courseService;
+    function CoursesListComponent(/*private courseService: CourseService, private toastr: ToastrService*/ route) {
+        this.route = route;
     }
     CoursesListComponent.prototype.ngOnInit = function () {
-        this.courses = this.courseService.getCourses();
+        //this.courses = this.courseService.getCourses(); // synchronous call
+        //this.courseService.getCourses().subscribe(courses => { this.courses = courses; }); // async call, but no longer needed since it's subscribing on the "course-list-resolver.service"
+        this.courses = this.route.snapshot.data['courses'];
     };
     CoursesListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'courses-list',
-            templateUrl: 'courses-list.component.html'
+            templateUrl: 'courses-list.component.html',
+            styles: ["\n    @media (max-width:991px) {\n      .col-md-3 button.btn-block {\n        margin-top: 15px;\n      }\n    }\n    \n    @media (max-width:767px) {\n      .col-md-9 .form-group + button {\n        display: block;\n        width: 100%;\n      }\n    }\n  "]
         }), 
-        __metadata('design:paramtypes', [course_service_1.CourseService])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
     ], CoursesListComponent);
     return CoursesListComponent;
 }());

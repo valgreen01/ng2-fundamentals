@@ -2,11 +2,10 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
-import {RouterModule} from "@angular/router";
-// import {AppRoutingModule} from "./app-routing.module";
+import {AppRoutingModule} from "./app-routing.module";
 
 // Components
-import {CoursesAppComponent} from "./courses-app.component";
+import {AppComponent} from "./app.component";
 import {HeaderComponent} from "./header/header.component";
 import {CoursesListComponent} from "./courses/courses-list.component";
 import {CourseItemComponent} from "./courses/course-item.component";
@@ -17,18 +16,16 @@ import {Error404Component} from "./error/404.component";
 import {CourseService} from "./courses/shared/course.service";
 import {ToastrService} from "./common/toastr.service";
 import {CourseRouteActivatorService} from "./courses/course-details/course-route-activator.service";
-
-// Routes
-import {appRoutes} from "./routes";
+import {CourseListResolverService} from "./courses/course-list-resolver.service";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   declarations: [
-    CoursesAppComponent,
+    AppComponent,
     HeaderComponent,
     CoursesListComponent,
     CourseItemComponent,
@@ -38,9 +35,21 @@ import {appRoutes} from "./routes";
   providers: [
     CourseService,
     ToastrService,
-    CourseRouteActivatorService
+    CourseRouteActivatorService,
+    CourseListResolverService,
+    {
+      provide: 'canDeactivateCreateCourse',
+      useValue: checkDirtyState
+    }
   ],
-  bootstrap: [CoursesAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
+}
+
+function checkDirtyState(component: CourseDetailsComponent) {
+  if(component.isDirty) {
+    return window.confirm('You have not saved this Course, do you really want to cancel?');
+  }
+  return true;
 }

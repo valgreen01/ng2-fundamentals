@@ -11,12 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var HeaderComponent = (function () {
     function HeaderComponent() {
+        this.logoImageUrl = 'app/assets/images/angular.png';
     }
     HeaderComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'header-nav',
-            templateUrl: 'header.component.html'
+            selector: 'app-header',
+            templateUrl: 'header.component.html',
+            styles: ["\n      li > a.active {\n        color: chartreuse;\n      }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], HeaderComponent);

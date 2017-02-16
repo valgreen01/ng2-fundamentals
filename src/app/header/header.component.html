@@ -1,17 +1,20 @@
 <header class="container">
   <div class="row">
     <div class="col-md-4">
-      <h1 class="logo">
-        <a [routerLink]="['/']">Logo here</a>
-      </h1>
+      <a [routerLink]="['/']">
+        <img [src]="logoImageUrl" width="100">
+      </a>
     </div>
     <div class="col-md-4">
       <div class="text-center">
         <ol class="breadcrumb">
           <li>
-            <a [routerLink]="['/courses']">Courses</a>
+            <a [routerLink]="['/courses']" routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}">Courses</a>
           </li>
-          <li class="active">7</li>
+          <li>
+            <a [routerLink]="['/courses', '2']" routerLinkActive="active">2</a>
+          </li>
         </ol>
       </div>
     </div>

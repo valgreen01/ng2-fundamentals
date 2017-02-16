@@ -9,6 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var Subject_1 = require("rxjs/Subject");
+require("rxjs/add/operator/map");
+// import 'rxjs/Rx'; this will load all features
 var CourseService = (function () {
     function CourseService() {
         this.COURSES = [
@@ -42,7 +45,14 @@ var CourseService = (function () {
         return this.COURSES.find(function (course) { return course.id === id; });
     };
     CourseService.prototype.getCourses = function () {
-        return this.COURSES;
+        var _this = this;
+        var subject = new Subject_1.Subject();
+        setTimeout(function () {
+            subject.next(_this.COURSES);
+            subject.complete();
+        }, 100);
+        return subject;
+        //return this.COURSES;
     };
     CourseService = __decorate([
         core_1.Injectable(), 

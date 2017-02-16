@@ -1,4 +1,8 @@
 import {Injectable} from "@angular/core";
+import {Subject} from "rxjs/Subject";
+import {Observable} from "rxjs/Observable";
+import "rxjs/add/operator/map";
+// import 'rxjs/Rx'; this will load all features
 
 @Injectable()
 export class CourseService {
@@ -34,8 +38,17 @@ export class CourseService {
     return this.COURSES.find(course => course.id === id);
   }
 
-  getCourses() {
-    return this.COURSES;
+  getCourses(): Observable<any> { // Remove returned type "Observable<any>" later, then import rxjs/Rx package
+    let subject = new Subject<any>();
+
+    setTimeout(() => {
+      subject.next(this.COURSES);
+      subject.complete();
+    }, 100);
+
+    return subject;
+
+    //return this.COURSES;
   }
 
 }

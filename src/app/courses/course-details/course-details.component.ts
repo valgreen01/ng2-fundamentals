@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class CourseDetailsComponent implements OnInit {
 
   course: any;
+  isDirty: boolean = true;
 
   constructor(private courseService: CourseService, private activatedRoute: ActivatedRoute, private router: Router) {
   }

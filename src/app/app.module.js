@@ -12,10 +12,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-var router_1 = require("@angular/router");
-// import {AppRoutingModule} from "./app-routing.module";
+var app_routing_module_1 = require("./app-routing.module");
 // Components
-var courses_app_component_1 = require("./courses-app.component");
+var app_component_1 = require("./app.component");
 var header_component_1 = require("./header/header.component");
 var courses_list_component_1 = require("./courses/courses-list.component");
 var course_item_component_1 = require("./courses/course-item.component");
@@ -25,8 +24,7 @@ var _404_component_1 = require("./error/404.component");
 var course_service_1 = require("./courses/shared/course.service");
 var toastr_service_1 = require("./common/toastr.service");
 var course_route_activator_service_1 = require("./courses/course-details/course-route-activator.service");
-// Routes
-var routes_1 = require("./routes");
+var course_list_resolver_service_1 = require("./courses/course-list-resolver.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,10 +33,10 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                router_1.RouterModule.forRoot(routes_1.appRoutes)
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
-                courses_app_component_1.CoursesAppComponent,
+                app_component_1.AppComponent,
                 header_component_1.HeaderComponent,
                 courses_list_component_1.CoursesListComponent,
                 course_item_component_1.CourseItemComponent,
@@ -48,13 +46,24 @@ var AppModule = (function () {
             providers: [
                 course_service_1.CourseService,
                 toastr_service_1.ToastrService,
-                course_route_activator_service_1.CourseRouteActivatorService
+                course_route_activator_service_1.CourseRouteActivatorService,
+                course_list_resolver_service_1.CourseListResolverService,
+                {
+                    provide: 'canDeactivateCreateCourse',
+                    useValue: checkDirtyState
+                }
             ],
-            bootstrap: [courses_app_component_1.CoursesAppComponent]
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
 }());
 exports.AppModule = AppModule;
+function checkDirtyState(component) {
+    if (component.isDirty) {
+        return window.confirm('You have not saved this Course, do you really want to cancel?');
+    }
+    return true;
+}
 //# sourceMappingURL=app.module.js.map

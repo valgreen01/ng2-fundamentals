@@ -16,6 +16,7 @@ var CourseDetailsComponent = (function () {
         this.courseService = courseService;
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.isDirty = true;
     }
     CourseDetailsComponent.prototype.ngOnInit = function () {
         this.course = this.courseService.getCourse(+this.activatedRoute.snapshot.params['id']);
