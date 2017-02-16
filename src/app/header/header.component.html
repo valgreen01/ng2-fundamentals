@@ -9,18 +9,18 @@
       <div class="text-center">
         <ol class="breadcrumb">
           <li>
-            <a [routerLink]="['/courses']" routerLinkActive="active"
+            <a [routerLink]="['courses']" routerLinkActive="active"
                [routerLinkActiveOptions]="{exact: true}">Courses</a>
           </li>
           <li>
-            <a [routerLink]="['/courses', '2']" routerLinkActive="active">2</a>
+            <a [routerLink]="['courses', '2']" routerLinkActive="active">2</a>
           </li>
         </ol>
       </div>
     </div>
     <div class="col-md-4">
       <div class="login text-right">
-        <p>User login</p>
+        <p>Welcome <a [routerLink]="['user/profile']">Aldo</a></p>
         <p>
           <a href="#">Logout</a>
         </p>

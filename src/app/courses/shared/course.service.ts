@@ -7,7 +7,7 @@ import "rxjs/add/operator/map";
 @Injectable()
 export class CourseService {
 
-  COURSES = [
+  COURSES:any = [
     {
       id: 1,
       name: '3D Modeling with JS',

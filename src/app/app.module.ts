@@ -48,7 +48,7 @@ export class AppModule {
 }
 
 function checkDirtyState(component: CourseDetailsComponent) {
-  if(component.isDirty) {
+  if (component.isDirty) {
     return window.confirm('You have not saved this Course, do you really want to cancel?');
   }
   return true;

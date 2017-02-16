@@ -9,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: 'courses-list.component.html',
   styles: [`
     @media (max-width:991px) {
-      .col-md-3 button.btn-block {
+      .col-md-3 button {
         margin-top: 15px;
       }
     }

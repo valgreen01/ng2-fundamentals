@@ -26,7 +26,7 @@ var CoursesListComponent = (function () {
             moduleId: module.id,
             selector: 'courses-list',
             templateUrl: 'courses-list.component.html',
-            styles: ["\n    @media (max-width:991px) {\n      .col-md-3 button.btn-block {\n        margin-top: 15px;\n      }\n    }\n    \n    @media (max-width:767px) {\n      .col-md-9 .form-group + button {\n        display: block;\n        width: 100%;\n      }\n    }\n  "]
+            styles: ["\n    @media (max-width:991px) {\n      .col-md-3 button {\n        margin-top: 15px;\n      }\n    }\n    \n    @media (max-width:767px) {\n      .col-md-9 .form-group + button {\n        display: block;\n        width: 100%;\n      }\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute])
     ], CoursesListComponent);
