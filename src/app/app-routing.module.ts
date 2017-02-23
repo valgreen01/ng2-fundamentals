@@ -1,10 +1,7 @@
 import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
-import {CoursesListComponent} from "./courses/courses-list.component";
-import {CourseDetailsComponent} from "./courses/course-details/course-details.component"
+import {CoursesListComponent, CourseDetailsComponent, CourseRouteActivatorService, CourseListResolverService} from "./courses/index";
 import {Error404Component} from "./error/404.component";
-import {CourseRouteActivatorService} from "./courses/course-details/course-route-activator.service";
-import {CourseListResolverService} from "./courses/course-list-resolver.service";
 
 export const appRoutes: Routes = [
   {path: '', redirectTo: '/courses', pathMatch: 'full'},

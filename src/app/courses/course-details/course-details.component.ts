@@ -19,6 +19,10 @@ export class CourseDetailsComponent implements OnInit {
     this.course = this.courseService.getCourse(+this.activatedRoute.snapshot.params['id']);
   }
 
+  /**
+   *  @method      cancelCourseCreation
+   *  @description navigate to /courses when pressing cancel button in form
+   */
   cancelCourseCreation() {
     this.router.navigate(['/courses']);
   }

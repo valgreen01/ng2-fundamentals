@@ -21,6 +21,10 @@ var CourseDetailsComponent = (function () {
     CourseDetailsComponent.prototype.ngOnInit = function () {
         this.course = this.courseService.getCourse(+this.activatedRoute.snapshot.params['id']);
     };
+    /**
+     *  @method      cancelCourseCreation
+     *  @description navigate to /courses when pressing cancel button in form
+     */
     CourseDetailsComponent.prototype.cancelCourseCreation = function () {
         this.router.navigate(['/courses']);
     };
