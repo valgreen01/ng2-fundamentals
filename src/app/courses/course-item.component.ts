@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {ICourse} from "./shared/course.model";
 
 @Component({
   moduleId: module.id,
@@ -7,7 +8,7 @@ import {Component, Input} from "@angular/core";
 })
 export class CourseItemComponent {
 
-  @Input() course: any;
+  @Input() course: ICourse;
 
   editCourse() {
     console.log('edit');

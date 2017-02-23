@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {CourseService} from "../shared/course.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ICourse} from "../shared/course.model";
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CourseDetailsComponent implements OnInit {
 
-  course: any;
+  course: ICourse;
   isDirty: boolean = true;
 
   constructor(private courseService: CourseService, private activatedRoute: ActivatedRoute, private router: Router) {

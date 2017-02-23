@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 //import {CourseService} from "./shared/course.service";
 import {ActivatedRoute} from "@angular/router";
+import {ICourse} from "./shared/course.model";
 //import {ToastrService} from "../common/toastr.service";
 
 @Component({
@@ -25,7 +26,7 @@ import {ActivatedRoute} from "@angular/router";
 export class CoursesListComponent implements OnInit {
 
   //courses: any[];
-  courses: any;
+  courses: ICourse[];
 
   constructor(/*private courseService: CourseService, private toastr: ToastrService*/ private route: ActivatedRoute) {
   }

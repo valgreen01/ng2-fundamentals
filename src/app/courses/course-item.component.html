@@ -7,7 +7,7 @@
     <span *ngIf="course?.duration && course?.releasedDate">&nbsp;|&nbsp;</span>
     <span class="date" *ngIf="course?.releasedDate"><i>Released:</i> {{course?.releasedDate}}</span>
     <p class="description">{{course?.description}}</p>
-    <p class="author" *ngIf="course?.author"><i>Author:</i> {{course?.author}}</p>
+    <p class="author" *ngIf="course?.authors"><i>Author:</i> {{course?.authors}}</p>
   </div>
   <div class="col-md-2">
     <button class="btn btn-sm btn-block btn-info" (click)="editCourse()" [routerLink]="['/courses', course?.id]">Edit course</button>
