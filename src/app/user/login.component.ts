@@ -5,7 +5,14 @@ import {Router} from "@angular/router";
 @Component({
   moduleId: module.id,
   selector: 'login-form',
-  templateUrl: 'login.component.html'
+  templateUrl: 'login.component.html',
+  styles: [`
+    em {
+      float: right;
+      color: #bd362f;
+      padding-left: 10px;
+    }
+  `]
 })
 export class LoginComponent implements OnInit {
 
