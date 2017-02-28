@@ -9,8 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var auth_service_1 = require("../user/auth.service");
 var HeaderComponent = (function () {
-    function HeaderComponent() {
+    function HeaderComponent(authService) {
+        this.authService = authService;
         this.logoImageUrl = 'app/assets/images/angular.png';
     }
     HeaderComponent = __decorate([
@@ -20,7 +22,7 @@ var HeaderComponent = (function () {
             templateUrl: 'header.component.html',
             styles: ["\n      li > a.active {\n        color: chartreuse;\n      }\n    "]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [auth_service_1.AuthService])
     ], HeaderComponent);
     return HeaderComponent;
 }());

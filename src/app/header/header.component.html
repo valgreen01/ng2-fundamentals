@@ -20,8 +20,9 @@
     </div>
     <div class="col-md-4">
       <div class="login text-right">
-        <p>Welcome <a [routerLink]="['user/profile']">Aldo</a></p>
-        <p>
+        <p *ngIf="!authService.isAuthenticated()"><a [routerLink]="['user/login']">Login</a></p>
+        <p *ngIf="authService.isAuthenticated()">Welcome <a [routerLink]="['user/profile']">{{authService.currentUser.firstName}}</a></p>
+        <p *ngIf="authService.isAuthenticated()">
           <a href="#">Logout</a>
         </p>
       </div>

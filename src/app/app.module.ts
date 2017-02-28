@@ -21,6 +21,7 @@ import {Error404Component} from "./error/404.component";
 
 // Services (third party libs)
 import {ToastrService} from "./common/toastr.service";
+import {AuthService} from "./user/auth.service";
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import {ToastrService} from "./common/toastr.service";
     ToastrService,
     CourseRouteActivatorService,
     CourseListResolverService,
+    AuthService,
     {
       provide: 'canDeactivateCreateCourse',
       useValue: checkDirtyState

@@ -21,6 +21,7 @@ var header_component_1 = require("./header/header.component");
 var _404_component_1 = require("./error/404.component");
 // Services (third party libs)
 var toastr_service_1 = require("./common/toastr.service");
+var auth_service_1 = require("./user/auth.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -44,6 +45,7 @@ var AppModule = (function () {
                 toastr_service_1.ToastrService,
                 index_1.CourseRouteActivatorService,
                 index_1.CourseListResolverService,
+                auth_service_1.AuthService,
                 {
                     provide: 'canDeactivateCreateCourse',
                     useValue: checkDirtyState
