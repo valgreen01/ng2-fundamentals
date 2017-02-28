@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'login-form',
+  // selector: 'login-form', // No selector needed since the component is being consumed by Routing instead of template files
   templateUrl: 'login.component.html',
   styles: [`
     em {
