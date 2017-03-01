@@ -15,7 +15,7 @@ export class HeaderComponent {
 
   logoImageUrl: string = 'app/assets/images/angular.png';
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) { // Does affect to have the public access modifiers in the constructor?
   }
 
 }
