@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var Subject_1 = require("rxjs/Subject");
 require("rxjs/add/operator/map");
-// import 'rxjs/Rx'; this will load all features
 var CourseService = (function () {
     function CourseService() {
         this.COURSES = [
@@ -22,7 +21,8 @@ var CourseService = (function () {
                 releasedDate: new Date('02/21/2017'),
                 duration: '2h 35m',
                 authors: [
-                    'Aldo Valgreen'
+                    'Aldo Valgreen',
+                    'Victoria Galitskaya'
                 ]
             },
             {
@@ -47,9 +47,20 @@ var CourseService = (function () {
             }
         ];
     }
+    /**
+     * @method      getCourse
+     * @description get single course by id
+     * @param       id
+     * @returns     {undefined|ICourse}
+     */
     CourseService.prototype.getCourse = function (id) {
         return this.COURSES.find(function (course) { return course.id === id; });
     };
+    /**
+     * @method      getCourses
+     * @description get list of courses
+     * @returns     {Subject<ICourse[]>}
+     */
     CourseService.prototype.getCourses = function () {
         var _this = this;
         var subject = new Subject_1.Subject();
@@ -58,7 +69,16 @@ var CourseService = (function () {
             subject.complete();
         }, 100);
         return subject;
-        //return this.COURSES;
+    };
+    /**
+     * @method      updateCourse
+     * @description update an existing course
+     * @param       course
+     */
+    CourseService.prototype.updateCourse = function (course) {
+        course.id = 999;
+        //course = [];
+        this.COURSES.push(course);
     };
     CourseService = __decorate([
         core_1.Injectable(), 

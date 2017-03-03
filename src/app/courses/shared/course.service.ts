@@ -3,12 +3,11 @@ import {Subject} from "rxjs/Subject";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/operator/map";
 import {ICourse} from "./course.model";
-// import 'rxjs/Rx'; this will load all features
 
 @Injectable()
 export class CourseService {
 
-  COURSES:ICourse[] = [
+  COURSES: ICourse[] = [
     {
       id: 1,
       name: '3D Modeling with JS',
@@ -16,8 +15,9 @@ export class CourseService {
       releasedDate: new Date('02/21/2017'),
       duration: '2h 35m',
       authors: [
-        'Aldo Valgreen'
-        ]
+        'Aldo Valgreen',
+        'Victoria Galitskaya'
+      ]
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export class CourseService {
       duration: null,
       authors: [
         'Henry White'
-        ]
+      ]
     },
     {
       id: 3,
@@ -41,11 +41,22 @@ export class CourseService {
     }
   ];
 
+  /**
+   * @method      getCourse
+   * @description get single course by id
+   * @param       id
+   * @returns     {undefined|ICourse}
+   */
   getCourse(id: number): ICourse {
     return this.COURSES.find(course => course.id === id);
   }
 
-  getCourses(): Observable<ICourse[]> { // Remove returned type "Observable<any>" later, then import rxjs/Rx package
+  /**
+   * @method      getCourses
+   * @description get list of courses
+   * @returns     {Subject<ICourse[]>}
+   */
+  getCourses(): Observable<ICourse[]> {
     let subject = new Subject<ICourse[]>();
 
     setTimeout(() => {
@@ -54,8 +65,17 @@ export class CourseService {
     }, 100);
 
     return subject;
+  }
 
-    //return this.COURSES;
+  /**
+   * @method      updateCourse
+   * @description update an existing course
+   * @param       course
+   */
+  updateCourse(course) {
+    course.id = 999;
+    //course = [];
+    this.COURSES.push(course);
   }
 
 }

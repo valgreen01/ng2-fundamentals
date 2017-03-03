@@ -7,7 +7,7 @@ export const appRoutes: Routes = [
   {path: '', redirectTo: '/courses', pathMatch: 'full'},
   {path: 'courses', component: CoursesListComponent, resolve: {courses: CourseListResolverService}},
   {path: 'courses/new', component: CourseDetailsComponent, canDeactivate: ['canDeactivateCreateCourse']},
-  {path: 'courses/:id', component: CourseDetailsComponent, canDeactivate: ['canDeactivateCreateCourse'], canActivate: [CourseRouteActivatorService]},
+  {path: 'courses/edit/:id', component: CourseDetailsComponent, canDeactivate: ['canDeactivateCreateCourse'], canActivate: [CourseRouteActivatorService]},
   {path: 'user', loadChildren: 'app/user/user.module#UserModule'},
   {path: '404', component: Error404Component},
   {path: '**', redirectTo: '404'} // Needs to be at the end of the Routes to other urls work, why? don't know, TODO: Research about it!
