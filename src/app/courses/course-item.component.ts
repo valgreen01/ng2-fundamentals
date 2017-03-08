@@ -4,7 +4,16 @@ import {ICourse} from "./shared/course.model";
 @Component({
   moduleId: module.id,
   selector: 'course-item',
-  templateUrl: 'course-item.component.html'
+  templateUrl: 'course-item.component.html',
+  styles: [`
+    i {
+      color: #2b3e50;
+    }
+    .description {
+      font-size: large;
+      margin: 20px 0;
+    }
+  `]
 })
 export class CourseItemComponent {
 

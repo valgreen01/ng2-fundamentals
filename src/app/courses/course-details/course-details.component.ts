@@ -56,11 +56,11 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit() {
     this.course = this.courseService.getCourse(+this.activatedRoute.snapshot.params['id']);
 
-    this.name = new FormControl('', [Validators.required]);
-    this.description = new FormControl('', [Validators.required, Validators.maxLength(140)]);
-    this.releasedDate = new FormControl('', [Validators.required, Validators.pattern(this.datePattern)]);
-    this.duration = new FormControl('', [Validators.required]);
-    this.authors = new FormControl('', [Validators.required]);
+    this.name = new FormControl(this.course.name, [Validators.required]);
+    this.description = new FormControl(this.course.description, [Validators.required, Validators.maxLength(140)]);
+    this.releasedDate = new FormControl(this.course.releasedDate, [Validators.required, Validators.pattern(this.datePattern)]);
+    this.duration = new FormControl(this.course.duration, [Validators.required]);
+    this.authors = new FormControl(this.course.authors, [Validators.required]);
 
     this.courseForm = new FormGroup({
       name: this.name,

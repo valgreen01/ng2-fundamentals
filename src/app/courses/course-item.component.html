@@ -1,16 +1,20 @@
 <div class="col-md-12 well course-item">
   <div class="col-md-10">
-    <h2 class="title">{{course?.name}}</h2>
+    <h2 class="title">{{course?.name | uppercase}}</h2>
     <hr>
     <!--Just for test purposes, [hidden] bind attribute-->
-    <span class="duration" [hidden]="!course?.duration"><i>Duration:</i> {{course?.duration}}</span>
+    <span class="duration" [hidden]="!course?.duration"><i>Duration: </i> {{ course?.duration}}</span>
     <span *ngIf="course?.duration && course?.releasedDate">&nbsp;|&nbsp;</span>
-    <span class="date" *ngIf="course?.releasedDate"><i>Released:</i> {{course?.releasedDate | date:'MM/dd/yyyy'}}</span>
+    <span class="date" *ngIf="course?.releasedDate"><i>Released: </i> {{course?.releasedDate | date:'MM/dd/yyyy'}}</span>
     <p class="description">{{course?.description}}</p>
-    <p class="author" *ngIf="course?.authors"><i>Author:</i> {{course?.authors}}</p>
+    <p class="author" *ngIf="course?.authors"><i>Author: </i> {{course?.authors}}</p>
   </div>
   <div class="col-md-2">
     <button class="btn btn-sm btn-block btn-info" (click)="editCourse()" [routerLink]="['/courses/edit', course?.id]">Edit course</button>
     <button class="btn btn-sm btn-block btn-danger" (click)="deleteCourse()">Delete</button>
   </div>
 </div>
+
+<pre>
+  {{course | json}}
+</pre>

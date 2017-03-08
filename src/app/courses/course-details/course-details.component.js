@@ -28,11 +28,11 @@ var CourseDetailsComponent = (function () {
     }
     CourseDetailsComponent.prototype.ngOnInit = function () {
         this.course = this.courseService.getCourse(+this.activatedRoute.snapshot.params['id']);
-        this.name = new forms_1.FormControl('', [forms_1.Validators.required]);
-        this.description = new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.maxLength(140)]);
-        this.releasedDate = new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.pattern(this.datePattern)]);
-        this.duration = new forms_1.FormControl('', [forms_1.Validators.required]);
-        this.authors = new forms_1.FormControl('', [forms_1.Validators.required]);
+        this.name = new forms_1.FormControl(this.course.name, [forms_1.Validators.required]);
+        this.description = new forms_1.FormControl(this.course.description, [forms_1.Validators.required, forms_1.Validators.maxLength(140)]);
+        this.releasedDate = new forms_1.FormControl(this.course.releasedDate, [forms_1.Validators.required, forms_1.Validators.pattern(this.datePattern)]);
+        this.duration = new forms_1.FormControl(this.course.duration, [forms_1.Validators.required]);
+        this.authors = new forms_1.FormControl(this.course.authors, [forms_1.Validators.required]);
         this.courseForm = new forms_1.FormGroup({
             name: this.name,
             description: this.description,

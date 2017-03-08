@@ -13,7 +13,7 @@ export class CourseService {
       name: '3D Modeling with JS',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
       releasedDate: new Date('02/21/2017'),
-      duration: '2h 35m',
+      duration: '145',
       authors: [
         'Aldo Valgreen',
         'Victoria Galitskaya'
@@ -34,7 +34,7 @@ export class CourseService {
       name: 'Sketch',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Elit amet.',
       releasedDate: new Date('03/14/2017'),
-      duration: '1h 20m',
+      duration: '120',
       authors: [
         'Siobhan Lu'
       ]
