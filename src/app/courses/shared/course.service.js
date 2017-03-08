@@ -71,11 +71,11 @@ var CourseService = (function () {
         return subject;
     };
     /**
-     * @method      updateCourse
-     * @description update an existing course
+     * @method      saveCourse
+     * @description save a single course
      * @param       course
      */
-    CourseService.prototype.updateCourse = function (course) {
+    CourseService.prototype.saveCourse = function (course) {
         course.id = 999;
         //course = [];
         this.COURSES.push(course);

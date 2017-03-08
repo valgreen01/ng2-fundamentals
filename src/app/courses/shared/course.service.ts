@@ -68,11 +68,11 @@ export class CourseService {
   }
 
   /**
-   * @method      updateCourse
-   * @description update an existing course
+   * @method      saveCourse
+   * @description save a single course
    * @param       course
    */
-  updateCourse(course) {
+  saveCourse(course) {
     course.id = 999;
     //course = [];
     this.COURSES.push(course);

@@ -6,36 +6,35 @@
         <div class="form-group" [ngClass]="{'error': name.invalid && name.dirty}">
           <label for="courseTitle" class="col-sm-2 control-label">Title</label>
           <div class="col-sm-10">
-            <em *ngIf="name.invalid && name.dirty">Required</em>
             <input formControlName="name" type="text" class="form-control" id="courseTitle" placeholder="Course title">
+            <em *ngIf="name.invalid && name.dirty">Required</em>
           </div>
         </div>
         <div class="form-group" [ngClass]="{'error': description.invalid && description.dirty}">
           <label for="courseDesc" class="col-sm-2 control-label">Description</label>
           <div class="col-sm-10">
+            <textarea formControlName="description" class="form-control" rows="3" id="courseDesc" placeholder="Course description"></textarea>
             <em *ngIf="description.invalid && description.dirty && description?.errors.required">Required</em>
             <em *ngIf="description.invalid && description.dirty && description?.errors.maxlength">Can not exceed 140 characters</em>
-            <textarea formControlName="description" class="form-control" rows="3" id="courseDesc" placeholder="Course description"></textarea>
           </div>
         </div>
         <div class="form-group" [ngClass]="{'error': releasedDate.invalid && releasedDate.dirty}">
           <label for="courseDate" class="col-sm-2 control-label">Date</label>
           <div class="col-sm-10">
-            <em *ngIf="releasedDate.invalid && releasedDate.dirty">Required</em>
             <input formControlName="releasedDate" type="text" class="form-control" id="courseDate" placeholder="Course date">
+            <em *ngIf="releasedDate.invalid && releasedDate.dirty">Required</em>
           </div>
         </div>
         <div class="form-group" [ngClass]="{'error': duration.invalid && duration.dirty}">
           <label for="courseDuration" class="col-sm-2 control-label">Duration</label>
           <div class="col-sm-10">
-            <em *ngIf="duration.invalid && duration.dirty">Required</em>
             <input formControlName="duration" type="text" class="form-control" id="courseDuration" placeholder="Course Duration">
+            <em *ngIf="duration.invalid && duration.dirty">Required</em>
           </div>
         </div>
         <div class="form-group" [ngClass]="{'error': authors.invalid && authors.dirty}">
           <label for="courseAuthors" class="col-sm-2 control-label">Authors</label>
           <div class="col-sm-4">
-            <em *ngIf="authors.invalid && authors.dirty">Required</em>
             <select formControlName="authors" multiple class="form-control" id="courseAuthors">
               <option>Aldo</option>
               <option>Henry</option>
@@ -43,6 +42,7 @@
               <option>Victoria</option>
               <option>Ricart</option>
             </select>
+            <em *ngIf="authors.invalid && authors.dirty">Required</em>
           </div>
           <div class="col-sm-2 text-center">
             <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-chevron-left"></i></button>
@@ -58,6 +58,10 @@
           &nbsp;&nbsp;&nbsp;&nbsp;
           <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
         </div>
+
+        <hr>
+        <pre>{{courseForm.value | json}}</pre>
+
       </form>
       <!-- END </form> -->
     </div>

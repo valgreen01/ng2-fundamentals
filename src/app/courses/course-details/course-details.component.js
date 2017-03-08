@@ -42,7 +42,7 @@ var CourseDetailsComponent = (function () {
         });
     };
     CourseDetailsComponent.prototype.saveCourse = function (formValues) {
-        //this.courseService.updateCourse(formValues);
+        //this.courseService.saveCourse(formValues);
         //this.isDirty = false;
         //this.router.navigate(['/courses']);
         console.log(formValues);
@@ -55,7 +55,7 @@ var CourseDetailsComponent = (function () {
             moduleId: module.id,
             selector: 'course-details',
             templateUrl: 'course-details.component.html',
-            styles: ["\n    em {\n      float: right;\n      color: #bd362f;\n      padding-left: 10px;\n    }\n    .error input,\n    .error select,\n    .error textarea {\n      background-color: #d67a6a;\n    }\n    .error ::-webkit-input-placeholder,\n    .error ::-moz-placeholder,\n    .error :-moz-placeholder,\n    .error :-ms-input-placeholder {\n      color: #999;\n    }\n  "]
+            styles: ["\n    em {\n      float: right;\n      color: #bd362f;\n      padding-left: 10px;\n    }\n    .error input,\n    .error select,\n    .error textarea {\n      background-color: #d67a6a;\n    }\n    .error ::-webkit-input-placeholder,\n    .error ::-moz-placeholder,\n    .error :-moz-placeholder,\n    .error :-ms-input-placeholder {\n      color: #ededed;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService, router_1.ActivatedRoute, router_1.Router])
     ], CourseDetailsComponent);

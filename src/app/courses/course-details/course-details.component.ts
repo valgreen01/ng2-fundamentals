@@ -23,7 +23,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
     .error ::-moz-placeholder,
     .error :-moz-placeholder,
     .error :-ms-input-placeholder {
-      color: #999;
+      color: #ededed;
     }
   `]
 })
@@ -72,7 +72,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   saveCourse(formValues) {
-    //this.courseService.updateCourse(formValues);
+    //this.courseService.saveCourse(formValues);
     //this.isDirty = false;
     //this.router.navigate(['/courses']);
     console.log(formValues);
