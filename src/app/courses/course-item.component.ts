@@ -7,7 +7,7 @@ import {ICourse} from "./shared/course.model";
   templateUrl: 'course-item.component.html',
   styles: [`
     i {
-      color: #2b3e50;
+      color: #999;
     }
     .description {
       font-size: large;

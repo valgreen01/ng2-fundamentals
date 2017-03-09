@@ -3,6 +3,6 @@ export interface ICourse {
   name: string;
   description?: string;
   releasedDate: Date;
-  duration?: string;
+  duration?: number;
   authors: Array<string>;
 }

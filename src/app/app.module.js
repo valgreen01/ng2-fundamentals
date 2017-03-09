@@ -39,7 +39,8 @@ var AppModule = (function () {
                 index_1.CoursesListComponent,
                 index_1.CourseItemComponent,
                 index_1.CourseDetailsComponent,
-                _404_component_1.Error404Component
+                _404_component_1.Error404Component,
+                index_1.DurationPipe
             ],
             providers: [
                 index_1.CourseService,

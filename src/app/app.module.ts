@@ -11,7 +11,8 @@ import {
   CourseDetailsComponent,
   CourseService,
   CourseRouteActivatorService,
-  CourseListResolverService
+  CourseListResolverService,
+  DurationPipe
 } from "./courses/index";
 
 // Components
@@ -36,7 +37,8 @@ import {AuthService} from "./user/auth.service";
     CoursesListComponent,
     CourseItemComponent,
     CourseDetailsComponent,
-    Error404Component
+    Error404Component,
+    DurationPipe
   ],
   providers: [
     CourseService,

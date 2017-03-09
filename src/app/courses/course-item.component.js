@@ -27,7 +27,7 @@ var CourseItemComponent = (function () {
             moduleId: module.id,
             selector: 'course-item',
             templateUrl: 'course-item.component.html',
-            styles: ["\n    i {\n      color: #2b3e50;\n    }\n    .description {\n      font-size: large;\n      margin: 20px 0;\n    }\n  "]
+            styles: ["\n    i {\n      color: #999;\n    }\n    .description {\n      font-size: large;\n      margin: 20px 0;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], CourseItemComponent);
