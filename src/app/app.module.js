@@ -19,7 +19,7 @@ var index_1 = require("./courses/index");
 var app_component_1 = require("./app.component");
 var header_component_1 = require("./header/header.component");
 var _404_component_1 = require("./error/404.component");
-// Services (third party libs)
+// Services (and third party libs as services)
 var toastr_service_1 = require("./common/toastr.service");
 var auth_service_1 = require("./user/auth.service");
 var AppModule = (function () {
@@ -44,8 +44,16 @@ var AppModule = (function () {
             ],
             providers: [
                 index_1.CourseService,
-                toastr_service_1.ToastrService,
+                {
+                    provide: toastr_service_1.TOASTR_TOKEN,
+                    useValue: toastr
+                },
                 index_1.CourseRouteActivatorService,
+                // ... so the below example would be the longhand way to do the same, registering/adding a Class as a Provider with the "provide" and "useClass" properties
+                // {
+                //   provide: CourseRouteActivatorService, // TOKEN
+                //   useClass: CourseRouteActivatorService // Object of the CLASS
+                // },
                 index_1.CourseListResolverService,
                 auth_service_1.AuthService,
                 {

@@ -20,9 +20,11 @@ import {AppComponent} from "./app.component";
 import {HeaderComponent} from "./header/header.component";
 import {Error404Component} from "./error/404.component";
 
-// Services (third party libs)
-import {ToastrService} from "./common/toastr.service";
+// Services (and third party libs as services)
+import {TOASTR_TOKEN, Toastr} from "./common/toastr.service";
 import {AuthService} from "./user/auth.service";
+
+declare let toastr: Toastr;
 
 @NgModule({
   imports: [
@@ -42,12 +44,20 @@ import {AuthService} from "./user/auth.service";
   ],
   providers: [
     CourseService,
-    ToastrService,
-    CourseRouteActivatorService,
+    {
+      provide: TOASTR_TOKEN, // OpaqueToken Object format used for Services injected into components and other services
+      useValue: toastr
+    },
+    CourseRouteActivatorService, // This is a shorthand way to REGISTER/ADD a Class as a Provider (to the DI system of NG2)
+    // ... so the below example would be the longhand way to do the same, registering/adding a Class as a Provider with the "provide" and "useClass" properties
+    // {
+    //   provide: CourseRouteActivatorService, // TOKEN
+    //   useClass: CourseRouteActivatorService // Object of the CLASS
+    // },
     CourseListResolverService,
     AuthService,
     {
-      provide: 'canDeactivateCreateCourse',
+      provide: 'canDeactivateCreateCourse', // String format used for Routing
       useValue: checkDirtyState
     }
   ],

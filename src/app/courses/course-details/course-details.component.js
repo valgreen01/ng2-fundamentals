@@ -13,12 +13,16 @@ var course_service_1 = require("../shared/course.service");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
 var CourseDetailsComponent = (function () {
-    // \b Word boundary. Matches a word boundary position such as whitespace, punctuation, or the start/end of the string.
-    // \d Digit. Matches any digit character (0-9).
-    // {2} Quantifier. Match 2 of the preceding token.
-    // [ Character set. Match any character in the set.
-    // . Character. Matches a "." character (char code 46).
-    // ]
+    /**
+     *
+     * \b Word boundary. Matches a word boundary position such as whitespace, punctuation, or the start/end of the string.
+     * \d Digit. Matches any digit character (0-9).
+     * {2} Quantifier. Match 2 of the preceding token.
+     * [ Character set. Match any character in the set.
+     * . Character. Matches a "." character (char code 46).
+     * ]
+     *
+     */
     function CourseDetailsComponent(courseService, activatedRoute, router) {
         this.courseService = courseService;
         this.activatedRoute = activatedRoute;

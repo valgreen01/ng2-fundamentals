@@ -43,12 +43,16 @@ export class CourseDetailsComponent implements OnInit {
 
   datePattern: RegExp = new RegExp(/\b\d{2}[.]\d{2}[.]\d{4}\b/, 'g');
 
-  // \b Word boundary. Matches a word boundary position such as whitespace, punctuation, or the start/end of the string.
-  // \d Digit. Matches any digit character (0-9).
-  // {2} Quantifier. Match 2 of the preceding token.
-  // [ Character set. Match any character in the set.
-  // . Character. Matches a "." character (char code 46).
-  // ]
+  /**
+   *
+   * \b Word boundary. Matches a word boundary position such as whitespace, punctuation, or the start/end of the string.
+   * \d Digit. Matches any digit character (0-9).
+   * {2} Quantifier. Match 2 of the preceding token.
+   * [ Character set. Match any character in the set.
+   * . Character. Matches a "." character (char code 46).
+   * ]
+   *
+   */
 
   constructor(private courseService: CourseService, private activatedRoute: ActivatedRoute, private router: Router) {
   }

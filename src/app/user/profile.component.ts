@@ -1,11 +1,12 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, Inject} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "./auth.service";
 import {Router} from "@angular/router";
+import {TOASTR_TOKEN, Toastr} from "../common/toastr.service";
 
 @Component({
   moduleId: module.id,
-  //selector: 'user-profile', // No selector needed since the component is being consumed by Routing instead of template files
+  //selector: 'user-profile', // No selector needed since the component is being consumed by Routing instead of in template files
   templateUrl: 'profile.component.html',
   styles: [`
     em {
@@ -31,7 +32,7 @@ export class ProfileComponent implements OnInit {
 
   profileForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private router: Router, private authService: AuthService, @Inject(TOASTR_TOKEN) private toastr: Toastr) {
   }
 
   ngOnInit() {
@@ -47,7 +48,8 @@ export class ProfileComponent implements OnInit {
   saveProfile(formValues) {
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
-      this.router.navigate(['courses']);
+      this.toastr.success('Profile Saved');
+      //this.router.navigate(['courses']);
     }
   }
 

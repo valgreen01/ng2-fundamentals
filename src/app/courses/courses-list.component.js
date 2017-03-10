@@ -11,9 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 //import {CourseService} from "./shared/course.service";
 var router_1 = require("@angular/router");
-//import {ToastrService} from "../common/toastr.service";
 var CoursesListComponent = (function () {
-    function CoursesListComponent(/*private courseService: CourseService, private toastr: ToastrService*/ route) {
+    function CoursesListComponent(route) {
         this.route = route;
     }
     CoursesListComponent.prototype.ngOnInit = function () {

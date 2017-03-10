@@ -2,7 +2,6 @@ import {Component, OnInit} from "@angular/core";
 //import {CourseService} from "./shared/course.service";
 import {ActivatedRoute} from "@angular/router";
 import {ICourse} from "./shared/course.model";
-//import {ToastrService} from "../common/toastr.service";
 
 @Component({
   moduleId: module.id,
@@ -28,7 +27,7 @@ export class CoursesListComponent implements OnInit {
   //courses: any[];
   courses: ICourse[];
 
-  constructor(/*private courseService: CourseService, private toastr: ToastrService*/ private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -36,9 +35,5 @@ export class CoursesListComponent implements OnInit {
     //this.courseService.getCourses().subscribe(courses => { this.courses = courses; }); // async call, but no longer needed since it's subscribing on the "course-list-resolver.service"
     this.courses = this.route.snapshot.data['courses'];
   }
-
-  // handleCourseClicked(courseName) {
-  //     this.toastr.success(courseName);
-  // }
 
 }
